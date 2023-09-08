@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script defer src="./js/client.js"></script>
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Chat application</title>
+    </head>
+    <body>
+        <div class="main-container">
+            <nav>
+
+                <img class="magic" src="talking.png" alt srcset>
+                <h1>Gossip with your Dost here!</h1>
+            </nav>
+            <div class="container">
+                <!-- <div class="message right"> -->
+                <!-- Deepak : Hey Rahul how are you ?  -->
+                <!-- </div>
+        <div class="message left"> -->
+                <!-- Rahul : I am fine bruh! -->
+                <!-- </div> -->
+            </div>
+            <div class="send">
+                <form action="#" id="send-container">
+                    <!-- <input type="text" name="messageInp" id="messageInp">
+            <button class="btn" type="submit">send</button> -->
+
+                    <input type="text" name="messageInp" id="messageInp"
+                        placeholder="Type your message...">
+                    <div class="file-input-container">
+                        <label for="fileInput" id="fileLabel">Choose File</label>
+                        <input type="file" id="fileInput"
+                            accept="image/*, video/*">
+                    </div>
+                    <button class="btn" type="submit">Send</button>
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>
