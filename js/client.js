@@ -7,6 +7,7 @@ const messageInput = document.getElementById('messageInp');
 const messageContainer = document.querySelector(".container");
 var audio = new Audio('Whatsapp 1 Message - Notification.mp3');
 
+//here we use append function for messages
 const append = (message, position) => {
     const messageElement = document.createElement("div");
     // messageElement.innerText = message;
@@ -32,20 +33,21 @@ form.addEventListener("submit", (e) => {
     messageInput.value = "";
 })
 
-
+//when any client use chat app then first he have to enter her name
 const name = prompt("Enter your name to join ");
-socket.emit('new-user-joined', name);
+socket.emit('new-user-joined', name); //here client emit event ('new-user-joined) to a server
 
+// handle this 'user-joined' event on client when any client joined the chat
 socket.on("user-joined", name => {
     append(`${name} joined the chat`, "left");
 })
 
-
+// handle this 'receive' event on client when any client send the message
 socket.on("receive", data => {
     append(`${data.name}:${data.message}`, "left");
 })
 
-
+// handle this 'left' event on client when any client left the chat 
 socket.on("left", name => {
     append(`${name} left the chat!`, "left");
 })
