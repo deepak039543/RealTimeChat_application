@@ -14,13 +14,13 @@ const append = (message, position) => {
     messageElement.classList.add("message");
     messageElement.classList.add(position);
     if (position === 'right') {
-        messageElement.innerText = `You : ${message}`;
-    } 
-    messageContainer.append(messageElement);
-    if (position == 'left') {
+        messageElement.innerText = message;
+    } else {
+        messageElement.innerText = message;
         audio.play();
     }
-
+    messageContainer.append(messageElement); 
+    
 }
 
 
